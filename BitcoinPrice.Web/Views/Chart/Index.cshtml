@@ -1,0 +1,27 @@
+﻿@*@model BitcoinPrice.Web.Models.ViewModel*@
+@{
+    ViewBag.Title = "Chart Page";
+}
+<div>
+    <table class="table table-hover table-dark font-weight-bolder">
+        <thead>
+            <tr class="table-danger font-weight-bold">
+                <th scope="col">Time</th>
+                <th scope="col">USD</th>
+                <th scope="col">GBP</th>
+                <th scope="col">EUR</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model)
+            {
+                <tr>
+                    <td>@data.time.updatedISO</td>
+                    <td>@data.bpi.USD.rate</td>
+                    <td>@data.bpi.GBP.rate</td>
+                    <td>@data.bpi.EUR.rate</td>
+                </tr>
+            }
+
+    </table>
+</div>
